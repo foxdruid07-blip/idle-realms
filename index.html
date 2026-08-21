@@ -3,268 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idle Realms — Tibia Classic</title>
+    <title>Idle Realms — Classic</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER PRINCIPAL -->
-    <header class="game-header">
-        <div class="header-left">
-            <h1 class="game-title">🧙 Idle Realms</h1>
-            <span class="game-version">v2.0 - Classic</span>
-        </div>
-        <div class="header-center">
-            <div class="status-item">
-                <span class="status-label">⚡ Stamina:</span>
-                <span class="status-value" id="stamina-display">8:00</span>
-                <div class="status-bar stamina-bar">
-                    <div class="status-fill" id="stamina-fill"></div>
+    <div class="game-wrapper">
+        <!-- PAINEL SUPERIOR -->
+        <div class="top-panel">
+            <div class="game-title-bar">
+                <span class="game-title">Idle Realms</span>
+                <span class="separator">|</span>
+                <span class="version">Classic Edition</span>
+            </div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="label">Name:</span>
+                    <span class="value" id="player-name">Player</span>
                 </div>
-            </div>
-        </div>
-        <div class="header-right">
-            <div class="status-item">
-                <span class="status-label">💰 Ouro:</span>
-                <span class="status-value gold-text" id="gold-display">0</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">⭐ Nível:</span>
-                <span class="status-value level-text" id="level-display">1</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">💎 Moedas:</span>
-                <span class="status-value coins-text" id="coins-display">0</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- NAVEGAÇÃO DE ABAS -->
-    <nav class="main-tabs">
-        <button class="tab-btn active" data-tab="hunt">🗺️ <span>Caça</span></button>
-        <button class="tab-btn" data-tab="dungeons">🏰 <span>Masmorras</span></button>
-        <button class="tab-btn" data-tab="bosses">👹 <span>Chefes</span></button>
-        <button class="tab-btn" data-tab="mining">⛏️ <span>Mineração</span></button>
-        <button class="tab-btn" data-tab="craft">🔨 <span>Craftar</span></button>
-        <button class="tab-btn" data-tab="market">🛍️ <span>Mercado</span></button>
-        <button class="tab-btn" data-tab="rewards">🎁 <span>Recompensas</span></button>
-        <button class="tab-btn" data-tab="shop">💎 <span>Loja de Coins</span></button>
-    </nav>
-
-    <!-- CONTAINER PRINCIPAL -->
-    <div class="game-container">
-        <!-- COLUNA ESQUERDA - PERSONAGEM -->
-        <aside class="panel left-panel">
-            <div class="panel-header">🧑 Personagem & Set</div>
-            <div class="panel-content">
-                <div class="character-display">
-                    <div class="character-sprite" id="char-sprite"></div>
-                    <div class="character-name" id="char-name">Cavaleiro</div>
-                    <div class="character-class" id="char-class">Humano</div>
+                <div class="status-item">
+                    <span class="label">Level:</span>
+                    <span class="value" id="player-level">1</span>
                 </div>
-
-                <div class="exp-section">
-                    <div class="exp-label">Experiência: <span id="exp-current">0</span>/<span id="exp-next">100</span></div>
-                    <div class="progress-bar"><div class="progress-fill" id="exp-bar"></div></div>
+                <div class="status-item">
+                    <span class="label">HP:</span>
+                    <span class="value" id="player-hp">100/100</span>
                 </div>
-
-                <div class="attributes-section">
-                    <div class="attribute-row">
-                        <span class="attr-label">❤️ Vida:</span>
-                        <span class="attr-value" id="hp-current">100</span>/<span id="hp-max">100</span>
-                        <div class="progress-bar hp-bar"><div class="progress-fill" id="hp-fill"></div></div>
+                <div class="status-item">
+                    <span class="label">Mana:</span>
+                    <span class="value" id="player-mana">100/100</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Gold:</span>
+                    <span class="value gold-text" id="player-gold">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Stamina:</span>
+                    <span class="value" id="player-stamina">8:00</span>
+                    <div class="mini-bar">
+                        <div class="mini-fill" id="stamina-mini"></div>
                     </div>
-                    <div class="attribute-row">
-                        <span class="attr-label">💧 Mana:</span>
-                        <span class="attr-value" id="mp-current">100</span>/<span id="mp-max">100</span>
-                        <div class="progress-bar mp-bar"><div class="progress-fill" id="mp-fill"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER PRINCIPAL -->
+        <div class="main-container">
+            <!-- PAINEL ESQUERDO - CHARACTER -->
+            <div class="left-panel panel">
+                <div class="panel-title">Character</div>
+                <div class="character-box">
+                    <img class="character-sprite" id="char-sprite" src="https://tibiawiki.dev/img/outfits/male/knight.gif" alt="Player">
+                    <div class="character-info">
+                        <div class="char-name">Knight</div>
+                        <div class="char-level">Level <span id="char-level">1</span></div>
+                        <div class="char-exp">
+                            <div class="exp-bar-container">
+                                <div class="exp-bar" id="exp-bar"></div>
+                                <span class="exp-text" id="exp-text">0/100</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="combat-stats">
-                    <div class="stat-row"><span>⚔️ Dano:</span><span id="stat-damage" class="stat-value">18</span><span class="stat-range">(1-38)</span></div>
-                    <div class="stat-row"><span>🛡️ Defesa:</span><span id="stat-defense" class="stat-value">15</span></div>
-                    <div class="stat-row"><span>⚡ Crítico:</span><span id="stat-crit" class="stat-value">0%</span></div>
-                    <div class="stat-row"><span>🎯 Precisão:</span><span id="stat-accuracy" class="stat-value">85%</span></div>
+                <div class="stats-section">
+                    <div class="stat-bar">
+                        <span class="stat-label">HP</span>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-fill hp-bar" id="hp-bar"></div>
+                            <span class="stat-value" id="hp-value">100/100</span>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Mana</span>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-fill mana-bar" id="mana-bar"></div>
+                            <span class="stat-value" id="mana-value">100/100</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="aura-section">
-                    <div class="aura-label">✨ Aura:</div>
-                    <div class="aura-display" id="aura-display">Nenhuma</div>
-                </div>
-
-                <div class="resonance-section">
-                    <div class="resonance-label">Ressonância do Set:</div>
-                    <div class="resonance-bar"><span id="resonance-current">0</span>/<span id="resonance-max">90</span></div>
-                    <div class="progress-bar"><div class="progress-fill" id="resonance-fill"></div></div>
+                <div class="combat-info">
+                    <div class="info-row">
+                        <span>Damage:</span>
+                        <span id="stat-damage" class="value-highlight">10</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Defense:</span>
+                        <span id="stat-defense" class="value-highlight">5</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Armor:</span>
+                        <span id="stat-armor" class="value-highlight">0</span>
+                    </div>
                 </div>
 
                 <div class="equipment-section">
-                    <div class="section-title">⚙️ Equipamentos</div>
-                    <div class="equipment-grid" id="equipment-grid"></div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- COLUNA CENTRO - CONTEÚDO PRINCIPAL -->
-        <main class="panel center-panel">
-            <div class="tab-content active" id="tab-hunt">
-                <div class="panel-header">🗺️ Áreas de Caça</div>
-                <div class="panel-content">
-                    <div class="hunt-selector" id="hunt-selector"></div>
-                    <div class="battle-arena" id="battle-arena" style="display:none;">
-                        <div class="arena-header">
-                            <span class="hunt-name" id="hunt-name">—</span>
-                            <span class="wave-counter" id="wave-counter">Onda: 0</span>
-                        </div>
-
-                        <div class="battle-field">
-                            <div class="player-side">
-                                <div class="player-sprite" id="player-battle-sprite"></div>
-                                <div class="player-hp">
-                                    <div class="hp-label" id="player-hp-label">100/100 HP</div>
-                                    <div class="hp-bar-battle"><div class="hp-fill" id="player-hp-bar"></div></div>
-                                </div>
-                            </div>
-
-                            <div class="vs-divider">⚔️</div>
-
-                            <div class="enemy-side">
-                                <div class="enemy-sprite" id="enemy-sprite"></div>
-                                <div class="enemy-name" id="enemy-name">—</div>
-                                <div class="enemy-hp">
-                                    <div class="hp-label" id="enemy-hp-label">0/0 HP</div>
-                                    <div class="hp-bar-battle"><div class="hp-fill" id="enemy-hp-bar"></div></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="battle-controls">
-                            <button class="battle-btn primary" id="btn-pause">⏸️ Pausar</button>
-                            <button class="battle-btn secondary" id="btn-stop">❌ Parar</button>
-                            <button class="battle-btn" id="btn-stamina">⚡ +1h Stamina (500)</button>
-                        </div>
-
-                        <div class="monster-quantity-selector">
-                            <label>Quantidade de criaturas por onda:</label>
-                            <div class="quantity-buttons">
-                                <button class="qty-btn" data-qty="1-2">1–2</button>
-                                <button class="qty-btn" data-qty="2-4">2–4</button>
-                                <button class="qty-btn" data-qty="4-6">4–6</button>
-                                <button class="qty-btn" data-qty="6-8">6–8</button>
-                            </div>
-                        </div>
-
-                        <div class="hunt-analyzer">
-                            <div class="analyzer-header">📊 Analisador de Caça</div>
-                            <div class="analyzer-grid">
-                                <div class="analyzer-item">⏱️ Tempo: <span class="analyzer-value" id="analyzer-time">00:00</span></div>
-                                <div class="analyzer-item">🌊 Ondas: <span class="analyzer-value" id="analyzer-waves">0</span></div>
-                                <div class="analyzer-item">⭐ XP/h: <span class="analyzer-value xp-text" id="analyzer-xph">0</span></div>
-                                <div class="analyzer-item">💰 Ouro/h: <span class="analyzer-value gold-text" id="analyzer-goldh">0</span></div>
-                                <div class="analyzer-item">📦 Itens/h: <span class="analyzer-value" id="analyzer-itemsh">0</span></div>
-                                <div class="analyzer-item">📈 XP/onda: <span class="analyzer-value" id="analyzer-xpwave">0</span></div>
-                            </div>
-                        </div>
-
-                        <div class="activity-log" id="activity-log"></div>
+                    <div class="section-title">Equipment</div>
+                    <div class="equipment-grid" id="equipment-grid">
+                        <!-- Será preenchido dinamicamente -->
                     </div>
+                </div>
+
+                <div class="aura-section">
+                    <div class="aura-text">Aura:</div>
+                    <div class="aura-name" id="aura-name">None</div>
                 </div>
             </div>
 
-            <div class="tab-content" id="tab-dungeons"><div class="panel-header">🏰 Masmorras</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-bosses"><div class="panel-header">👹 Chefes</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-mining"><div class="panel-header">⛏️ Mineração</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-craft"><div class="panel-header">🔨 Craftar</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-market"><div class="panel-header">🛍️ Mercado</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-rewards"><div class="panel-header">🎁 Recompensas</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-            <div class="tab-content" id="tab-shop"><div class="panel-header">💎 Loja de Coins</div><div class="panel-content"><div class="coming-soon">Em desenvolvimento...</div></div></div>
-        </main>
+            <!-- PAINEL CENTRAL - HUNT/BATTLE -->
+            <div class="center-panel panel">
+                <div class="panel-title">Hunting</div>
 
-        <!-- COLUNA DIREITA - INVENTÁRIO E DETALHES -->
-        <aside class="panel right-panel">
-            <div class="panel-header">🎒 Inventário</div>
-            <div class="panel-content">
-                <div class="item-detail" id="item-detail"><div class="no-selection">Clique em um item para ver detalhes</div></div>
-                <div class="inventory-grid" id="inventory-grid"></div>
-
-                <div class="auto-sell-section">
-                    <div class="section-title">💰 Venda Automática</div>
-                    <div class="auto-sell-config">
-                        <div class="rarity-group">
-                            <label><input type="checkbox" class="rarity-check" data-rarity="comum" checked> Comum</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="incomum"> Incomum</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="raro"> Raro</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="epico"> Épico</label>
-                        </div>
-                        <div class="rarity-group">
-                            <label><input type="checkbox" class="rarity-check" data-rarity="lendario"> Lendário</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="mitico"> Mítico</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="divino"> Divino</label>
-                            <label><input type="checkbox" class="rarity-check" data-rarity="ultra"> Ultra Divino</label>
-                        </div>
-                        <button class="config-btn" id="save-auto-sell">✅ Salvar</button>
+                <!-- LISTA DE HUNTS -->
+                <div id="hunt-list-container">
+                    <div class="hunts-grid" id="hunts-grid">
+                        <!-- Será preenchido dinamicamente -->
                     </div>
                 </div>
 
-                <div class="inventory-actions">
-                    <button class="action-btn" id="sell-all-btn">💰 Vender Tudo</button>
-                    <button class="action-btn danger" id="clear-inv-btn">🗑️ Esvaziar</button>
-                </div>
+                <!-- ARENA DE BATALHA -->
+                <div id="battle-container" class="battle-container" style="display:none;">
+                    <div class="battle-header">
+                        <div class="hunt-info">
+                            <span class="hunt-area" id="hunt-area">Unknown</span>
+                            <span class="wave-info">Wave <span id="wave-count">1</span></span>
+                        </div>
+                        <button class="battle-btn primary" id="btn-pause">Pause</button>
+                        <button class="battle-btn secondary" id="btn-stop">Stop</button>
+                    </div>
 
-                <div class="supplies-section">
-                    <div class="section-title">Supplies & Spellbook</div>
-                    <div class="potions-section">
-                        <div class="potions-header">Loja de Potions</div>
-                        <div class="potions-grid" id="potions-grid"></div>
-                        <div class="potions-status">
-                            <span>HP Pots: <span id="hp-pots">0</span></span>
-                            <span>MP Pots: <span id="mp-pots">0</span></span>
-                            <span>Mana: <span id="mana-status">0</span>/<span id="mana-max-status">0</span></span>
+                    <!-- ARENA VISUAL -->
+                    <div class="battle-arena">
+                        <div class="arena-player">
+                            <img class="arena-sprite player" id="arena-player-sprite" src="https://tibiawiki.dev/img/outfits/male/knight.gif" alt="Player">
+                            <div class="arena-hp-bar">
+                                <div class="hp-fill" id="arena-player-hp"></div>
+                                <span class="hp-text" id="arena-player-hp-text">100/100</span>
+                            </div>
                         </div>
 
-                        <div class="auto-refill-section">
-                            <div class="refill-header">Refill Automático</div>
-                            <div class="refill-config">
-                                <div class="refill-row">
-                                    <label>Usar HP em:</label>
-                                    <input type="number" id="hp-refill-percent" value="35" min="1" max="100">
-                                    <span>%</span>
-                                    <label>Comprar HP ao chegar em:</label>
-                                    <input type="number" id="hp-buy-amount" value="100" min="1">
-                                    <span>pots</span>
-                                </div>
-                                <div class="refill-row">
-                                    <label>Usar MP em:</label>
-                                    <input type="number" id="mp-refill-percent" value="25" min="1" max="100">
-                                    <span>%</span>
-                                    <label>Comprar MP ao chegar em:</label>
-                                    <input type="number" id="mp-buy-amount" value="10" min="1">
-                                    <span>pots</span>
-                                </div>
+                        <div class="arena-vs">VS</div>
+
+                        <div class="arena-enemy">
+                            <img class="arena-sprite enemy" id="arena-enemy-sprite" src="https://tibiawiki.dev/img/creatures/rat.gif" alt="Enemy">
+                            <div class="enemy-name-tag" id="enemy-name">Rat</div>
+                            <div class="arena-hp-bar">
+                                <div class="hp-fill" id="arena-enemy-hp"></div>
+                                <span class="hp-text" id="arena-enemy-hp-text">40/40</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="spells-section">
-                        <div class="spells-header">Rotação de 3 Skills</div>
-                        <div class="spells-slots">
-                            <div class="spell-slot">
-                                <label>SLOT 1:</label>
-                                <select id="spell-slot-1"><option value="">—Ataque básico</option></select>
+                    <!-- LOG DE BATALHA -->
+                    <div class="battle-log" id="battle-log"></div>
+
+                    <!-- CONTROLES -->
+                    <div class="battle-controls">
+                        <div class="quantity-selector">
+                            <span>Monsters per wave:</span>
+                            <div class="qty-buttons">
+                                <button class="qty-btn" data-qty="1-2">1-2</button>
+                                <button class="qty-btn" data-qty="2-4">2-4</button>
+                                <button class="qty-btn active" data-qty="4-6">4-6</button>
+                                <button class="qty-btn" data-qty="6-8">6-8</button>
                             </div>
-                            <div class="spell-slot">
-                                <label>SLOT 2:</label>
-                                <select id="spell-slot-2"><option value="">—Ataque básico</option></select>
+                        </div>
+                        <button class="action-btn" id="btn-stamina">Buy Stamina (500 Gold)</button>
+                    </div>
+
+                    <!-- ANALISADOR -->
+                    <div class="analyzer">
+                        <div class="analyzer-title">Hunt Analyzer</div>
+                        <div class="analyzer-stats">
+                            <div class="analyzer-item">
+                                <span class="label">Time:</span>
+                                <span class="value" id="analyzer-time">00:00</span>
                             </div>
-                            <div class="spell-slot">
-                                <label>SLOT 3:</label>
-                                <select id="spell-slot-3"><option value="">—Ataque básico</option></select>
+                            <div class="analyzer-item">
+                                <span class="label">Waves:</span>
+                                <span class="value" id="analyzer-waves">0</span>
+                            </div>
+                            <div class="analyzer-item">
+                                <span class="label">XP/h:</span>
+                                <span class="value xp" id="analyzer-xph">0</span>
+                            </div>
+                            <div class="analyzer-item">
+                                <span class="label">Gold/h:</span>
+                                <span class="value gold" id="analyzer-goldh">0</span>
+                            </div>
+                            <div class="analyzer-item">
+                                <span class="label">Items/h:</span>
+                                <span class="value" id="analyzer-itemsh">0</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </aside>
+
+            <!-- PAINEL DIREITO - INVENTORY -->
+            <div class="right-panel panel">
+                <div class="panel-title">Inventory</div>
+                
+                <div class="item-detail-box" id="item-detail">
+                    <div class="no-item-message">Select an item</div>
+                </div>
+
+                <div class="inventory-section">
+                    <div class="inv-header">
+                        <span>Items <span id="inv-count">0</span>/40</span>
+                        <div class="inv-buttons">
+                            <button class="mini-btn" id="btn-sell-all">Sell All</button>
+                            <button class="mini-btn danger" id="btn-clear">Clear</button>
+                        </div>
+                    </div>
+                    <div class="inventory-grid" id="inventory-grid">
+                        <!-- Será preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <div class="auto-sell-config">
+                    <div class="config-title">Auto-Sell</div>
+                    <div class="rarity-checkboxes">
+                        <label class="rarity-label comum">
+                            <input type="checkbox" class="rarity-check" data-rarity="comum" checked>
+                            <span>Common</span>
+                        </label>
+                        <label class="rarity-label incomum">
+                            <input type="checkbox" class="rarity-check" data-rarity="incomum">
+                            <span>Uncommon</span>
+                        </label>
+                        <label class="rarity-label raro">
+                            <input type="checkbox" class="rarity-check" data-rarity="raro">
+                            <span>Rare</span>
+                        </label>
+                        <label class="rarity-label epico">
+                            <input type="checkbox" class="rarity-check" data-rarity="epico">
+                            <span>Epic</span>
+                        </label>
+                        <label class="rarity-label lendario">
+                            <input type="checkbox" class="rarity-check" data-rarity="lendario">
+                            <span>Legendary</span>
+                        </label>
+                        <label class="rarity-label mitico">
+                            <input type="checkbox" class="rarity-check" data-rarity="mitico">
+                            <span>Mythic</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL INFERIOR -->
+        <div class="bottom-panel">
+            <div class="status-text">Ready to hunt. Select a hunting ground.</div>
+        </div>
     </div>
 
     <script src="js/constants.js"></script>
