@@ -139,9 +139,7 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
 <div class="corpo">
   <div class="coluna">
     <div class="tit-coluna">🧑 Personagem</div>
-    <div class="avatar" id="avatar">
-      <div class="aura" id="aura-personagem"></div>🧙‍♂️
-    </div>
+    <div class="avatar" id="avatar"><div class="aura" id="aura-personagem"></div><img src="https://tibiawiki.dev/img/outfits/male/citizen.png" width="60" height="60"></div>
     <div class="linha-status">❤️ Vida <span id="vida-txt">100/100</span><div class="barra"><div class="vida-bar" id="vida-bar"></div></div></div>
     <div class="linha-status">💧 Mana <span id="mana-txt">100/100</span><div class="barra"><div class="mana-bar" id="mana-bar"></div></div></div>
     <div class="linha-status">⭐ XP <span id="xp-txt">0/100</span><div class="barra"><div class="xp-bar" id="xp-bar"></div></div></div>
@@ -173,7 +171,7 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
           </div>
         </div>
         <div class="arena">
-          <div class="pc" id="pc-sprite">🧙‍♂️</div>
+     <div class="pc" id="pc-sprite"><img src="https://tibiawiki.dev/img/outfits/male/citizen.png" width="50" height="50"></div>
           <div class="nome-mon" id="nome-mon">—</div>
           <div class="barra-mon"><div id="barra-mon"></div></div>
           <div class="mon" id="mon-sprite">—</div>
@@ -253,14 +251,14 @@ const AURAS=[
 ];
 
 const MONSTROS_TIBIA=[
-  {n:'Rato',i:'🐀',v:40,d:4,e:12,g:2,drops:[{t:'arma',i:'🗡️',n:'Adaga Enferrujada',v:5}]},
-  {n:'Aranha',i:'🕷️',v:55,d:6,e:18,g:3,drops:[{t:'armadura',i:'👢',n:'Botas Rasgadas',v:6}]},
-  {n:'Lobo',i:'🐺',v:80,d:9,e:28,g:5,drops:[{t:'arma',i:'⚔️',n:'Espada de Lobo',v:18}]},
-  {n:'Goblin',i:'👺',v:100,d:11,e:35,g:8,drops:[{t:'arma',i:'🗡️',n:'Adaga de Goblin',v:25}]},
-  {n:'Orc',i:'👹',v:200,d:22,e:95,g:25,drops:[{t:'arma',i:'⚔️',n:'Machado Orc',v:400}]},
-  {n:'Troll',i:'👾',v:150,d:16,e:60,g:15,drops:[{t:'armadura',i:'🛡️',n:'Escudo de Troll',v:80}]},
-  {n:'Esqueleto',i:'💀',v:180,d:19,e:75,g:20,drops:[{t:'arma',i:'🦴',n:'Cajado Ósseo',v:120}]},
-  {n:'Cobra',i:'🐍',v:120,d:14,e:45,g:10,drops:[{t:'consumivel',i:'🧪',n:'Veneno',v:30}]}
+  {n:'Rato',i:'<img src="https://tibiawiki.dev/img/creatures/rat.gif" width="40" height="40">',v:40,d:4,e:12,g:2,drops:[{t:'arma',i:'🗡️',n:'Adaga Enferrujada',v:5}]},
+  {n:'Aranha',i:'<img src="https://tibiawiki.dev/img/creatures/spider.gif" width="40" height="40">',v:55,d:6,e:18,g:3,drops:[{t:'armadura',i:'👢',n:'Botas Rasgadas',v:6}]},
+  {n:'Lobo',i:'<img src="https://tibiawiki.dev/img/creatures/wolf.gif" width="40" height="40">',v:80,d:9,e:28,g:5,drops:[{t:'arma',i:'⚔️',n:'Espada de Lobo',v:18}]},
+  {n:'Goblin',i:'<img src="https://tibiawiki.dev/img/creatures/goblin.gif" width="40" height="40">',v:100,d:11,e:35,g:8,drops:[{t:'arma',i:'🗡️',n:'Adaga de Goblin',v:25}]},
+  {n:'Orc',i:'<img src="https://tibiawiki.dev/img/creatures/orc.gif" width="40" height="40">',v:200,d:22,e:95,g:25,drops:[{t:'arma',i:'⚔️',n:'Machado Orc',v:400}]},
+  {n:'Troll',i:'<img src="https://tibiawiki.dev/img/creatures/troll.gif" width="40" height="40">',v:150,d:16,e:60,g:15,drops:[{t:'armadura',i:'🛡️',n:'Escudo de Troll',v:80}]},
+  {n:'Esqueleto',i:'<img src="https://tibiawiki.dev/img/creatures/skeleton.gif" width="40" height="40">',v:180,d:19,e:75,g:20,drops:[{t:'arma',i:'🦴',n:'Cajado Ósseo',v:120}]},
+  {n:'Cobra',i:'<img src="https://tibiawiki.dev/img/creatures/snake.gif" width="40" height="40">',v:120,d:14,e:45,g:10,drops:[{t:'consumivel',i:'🧪',n:'Veneno',v:30}]}
 ];
 
 const HUNTS=[
@@ -535,7 +533,52 @@ function salvarVendaConfig(){
   });
   salvar(); alert('Configuração salva! ✅');
 }
+// EQUIPAR ITEM AO CLICAR
+function equiparItem(idx){
+  let item=jogador.inv[idx];
+  if(!item) return;
+  
+  // Define qual slot de acordo com tipo
+  let slot=null;
+  if(item.t==='arma') slot='maos';
+  else if(item.t==='armadura') slot='peito';
+  else if(item.t==='elmo' || item.t==='cabeca') slot='cabeca';
+  else if(item.t==='botas' || item.t==='pernas') slot='pernas';
+  else if(item.t==='anel') slot='anel';
+  else if(item.t==='amuleto') slot='amuleto';
+  else if(item.t==='munição' || item.t==='municao') slot='municao';
+  else if(item.t==='escudo' || item.t==='bolsa') slot='bolsa';
+  
+  if(!slot){
+    alert('Tipo de item não equipável!');
+    return;
+  }
+  
+  // Se já tem algo equipado, volta pro inventário
+  if(jogador.equip[slot]){
+    jogador.inv.push(jogador.equip[slot]);
+  }
+  
+  // Equipa o novo item
+  jogador.equip[slot]=item;
+  jogador.inv.splice(idx,1);
+  
+  adicionarLog(`🛡️ Equipou: ${item.n}`,'destaque');
+  renderizarInventario();
+  renderizarEquipamentos();
+  atualizarTela();
+  salvar();
+}
 
+// Substitui a função mostrarItem para adicionar botão de equipar
+const mostrarItemAntigo=mostrarItem;
+window.mostrarItem=function(i){
+  let item=jogador.inv[i];
+  mostrarItemAntigo(i);
+  // Adiciona botão de equipar
+  let d=document.getElementById('item-detalhe');
+  d.innerHTML+=`<button class="btn" style="width:100%;margin-top:8px" onclick="equiparItem(${i})">🛡️ Equipar Item</button>`;
+};
 function renderizarEquipamentos(){
   let slots=['cabeca','peito','maos','pernas','anel','amuleto','municao','bolsa'];
   let icones=['🧢','👕','🗡️','👢','💍','📿','🏹','🎒'];
