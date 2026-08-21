@@ -14,7 +14,6 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Georgia',serif}
 body{background:linear-gradient(135deg,#1A1208,#2C2010);color:#E8D4A8;min-height:100vh}
-
 .topo{background:linear-gradient(180deg,#3A2915,#2C1E0F);border-bottom:3px solid var(--ouro-escuro);padding:8px 15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .logo{font-size:1.4rem;font-weight:bold;color:var(--ouro-brilhante);text-shadow:2px 2px 4px #000}
 .status-topo{display:flex;gap:15px;align-items:center;font-size:.9rem}
@@ -22,16 +21,13 @@ body{background:linear-gradient(135deg,#1A1208,#2C2010);color:#E8D4A8;min-height
 .barra-topo>div{height:100%;transition:.3s}
 .stamina-bar{background:linear-gradient(90deg,#008080,#20B2AA)}
 .ouro-topo{color:var(--ouro-brilhante);font-weight:bold}
-
 .abas{display:flex;background:#2C1E0F;border-bottom:2px solid var(--bronze);padding:0 10px;flex-wrap:wrap}
 .aba{padding:8px 14px;cursor:pointer;border:2px solid transparent;border-bottom:0;border-radius:6px 6px 0 0;color:#C8B896;font-size:.88rem}
 .aba.ativa{background:linear-gradient(180deg,#5C4428,#3A2915);border-color:var(--ouro-escuro);color:var(--ouro-brilhante);margin-bottom:-2px;border-bottom:2px solid #3A2915}
-
 .corpo{display:grid;grid-template-columns:240px 1fr 280px;gap:12px;padding:12px;max-width:1450px;margin:0 auto}
 .coluna{background:linear-gradient(180deg,#3A2915,#2C1E0F);border:3px solid var(--ouro-escuro);border-radius:8px;padding:12px;box-shadow:inset 0 0 15px rgba(0,0,0,.5)}
 .tit-coluna{font-size:.95rem;color:var(--ouro-brilhante);margin-bottom:10px;padding-bottom:5px;border-bottom:2px solid var(--madeira-clara)}
-
-.avatar{text-align:center;font-size:64px;margin:8px 0;position:relative;image-rendering:pixelated}
+.avatar{text-align:center;font-size:64px;margin:8px 0;position:relative}
 .aura{position:absolute;inset:-10px;border-radius:50%;opacity:.35;pointer-events:none;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:.25}50%{opacity:.45}}
 .linha-status{margin:6px 0;font-size:.85rem}
@@ -41,28 +37,25 @@ body{background:linear-gradient(135deg,#1A1208,#2C2010);color:#E8D4A8;min-height
 .mana-bar{background:linear-gradient(90deg,#00008B,#4169E1)}
 .xp-bar{background:linear-gradient(90deg,#006400,#32CD32)}
 .eq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}
-.eq-slot{aspect-ratio:1;background:#2C2010;border:2px solid #5C4428;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:28px;cursor:pointer;transition:.15s;image-rendering:pixelated}
+.eq-slot{aspect-ratio:1;background:#2C2010;border:2px solid #5C4428;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:28px;cursor:pointer;transition:.15s}
 .eq-slot:hover{border-color:var(--ouro-brilhante);background:#3A2915}
 .eq-slot.tem{border-color:var(--ouro-escuro)}
 .eq-nome{font-size:.6rem;color:#B8A888;margin-top:2px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}
-
 .hunt-card{background:#2C2010;border:2px solid var(--bronze);border-radius:6px;padding:10px;margin-bottom:8px;cursor:pointer;transition:.15s}
 .hunt-card:hover{border-color:var(--ouro-brilhante);background:#3A2915}
 .hunt-card.bloq{opacity:.5;cursor:not-allowed}
 .qtd-monstros{display:flex;gap:6px;margin:8px 0}
 .btn-qtd{padding:4px 8px;background:#2C2010;border:2px solid #5C4428;border-radius:4px;color:#E8D4A8;cursor:pointer;font-size:.8rem}
 .btn-qtd.ativa{border-color:var(--ouro-brilhante);background:#3A2915;color:var(--ouro-brilhante)}
-
 .analyzer{background:#2C2010;border:2px solid var(--bronze);border-radius:6px;padding:10px;margin:10px 0}
 .analyzer-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.82rem}
 .valor-xp{color:var(--xp);font-weight:bold}
 .valor-ouro{color:var(--ouro-brilhante);font-weight:bold}
-
 .arena{height:200px;background:linear-gradient(180deg,#2A3A20,#1A2612);border:3px solid var(--bronze);border-radius:6px;position:relative;overflow:hidden;margin:10px 0}
-.pc{position:absolute;left:15%;bottom:25px;font-size:56px;transition:.15s;image-rendering:pixelated}
+.pc{position:absolute;left:15%;bottom:25px;font-size:56px;transition:.15s}
 .pc.atacando{animation:balanca .25s}
 @keyframes balanca{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-10deg)scale(1.08)}75%{transform:rotate(8deg)}}
-.mon{position:absolute;right:15%;bottom:25px;font-size:56px;transition:.15s;image-rendering:pixelated}
+.mon{position:absolute;right:15%;bottom:25px;font-size:56px;transition:.15s}
 .mon.dano{animation:treme .15s;filter:brightness(1.5)}
 @keyframes treme{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 .mon.morto{opacity:0;transform:translateY(40px) rotate(90deg);transition:.4s}
@@ -79,10 +72,9 @@ body{background:linear-gradient(135deg,#1A1208,#2C2010);color:#E8D4A8;min-height
 .log-area .cura{color:#66FF66}
 .log-area .ouro{color:#FFD700}
 .log-area .destaque{color:#FFD700}
-
 .inv-bloco{margin-top:12px;padding-top:10px;border-top:2px solid var(--madeira-clara)}
 .inv-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:8px}
-.inv-slot{aspect-ratio:1;background:#2C2010;border:2px solid #5C4428;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;transition:.15s;image-rendering:pixelated}
+.inv-slot{aspect-ratio:1;background:#2C2010;border:2px solid #5C4428;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;transition:.15s}
 .inv-slot:hover{transform:scale(1.1);z-index:5}
 .r-comum{border-color:var(--comum)}
 .r-incomum{border-color:var(--incomum)}
@@ -92,28 +84,23 @@ body{background:linear-gradient(135deg,#1A1208,#2C2010);color:#E8D4A8;min-height
 .r-mitico{border-color:var(--mitico)}
 .r-divino{border-color:var(--divino);box-shadow:0 0 6px rgba(255,215,0,.3)}
 .r-ultra{border-color:var(--ultra);box-shadow:0 0 10px rgba(255,248,220,.5);background:#3A2915}
-
 .venda-config{background:#2C2010;border:2px solid var(--bronze);border-radius:6px;padding:10px;margin-top:10px}
 .linha-check{display:flex;align-items:center;gap:6px;margin:4px 0;font-size:.85rem}
 input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;cursor:pointer}
-
 .item-nome{font-size:1rem;font-weight:bold;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #5C4428}
 .atributo{font-size:.8rem;margin:3px 0;padding-left:8px}
 .refino-area{margin-top:10px;padding-top:8px;border-top:2px solid #5C4428}
 .refino-barra{height:10px;background:#1A1A1A;border-radius:3px;overflow:hidden;margin:4px 0}
 .refino-barra>div{height:100%;background:linear-gradient(90deg,#B8860B,#FFD700)}
-
 .mineracao-area{text-align:center;padding:20px}
 .minerando{font-size:48px;animation:balanca-min .8s infinite alternate;display:inline-block}
 @keyframes balanca-min{0%{transform:rotate(-10deg)}100%{transform:rotate(10deg)}}
-
 .pagina{display:none}
 .pagina.mostra{display:block}
 .area-batalha{display:none}
 </style>
 </head>
 <body>
-
 <div class="topo">
   <div class="logo">⚔️ Idle Realms — Tibia Style</div>
   <div class="status-topo">
@@ -125,7 +112,6 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
     <div>⭐ Nv.<span id="lvl-topo">1</span></div>
   </div>
 </div>
-
 <div class="abas">
   <div class="aba ativa" onclick="mostrarAba('hunt')">🗺️ Caça</div>
   <div class="aba" onclick="mostrarAba('minerar')">⛏️ Minerar</div>
@@ -133,13 +119,11 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
   <div class="aba" onclick="mostrarAba('dungeon')">🏰 Masmorra</div>
   <div class="aba" onclick="mostrarAba('boss')">👹 Boss</div>
 </div>
-
 <div class="corpo">
   <div class="coluna">
     <div class="tit-coluna">🧑 Personagem</div>
     <div class="avatar" id="avatar">
-      <div class="aura" id="aura-personagem"></div>
-      🧙‍♂️
+      <div class="aura" id="aura-personagem"></div>🧙‍♂️
     </div>
     <div class="linha-status">❤️ Vida <span id="vida-txt">100/100</span><div class="barra"><div class="vida-bar" id="vida-bar"></div></div></div>
     <div class="linha-status">💧 Mana <span id="mana-txt">100/100</span><div class="barra"><div class="mana-bar" id="mana-bar"></div></div></div>
@@ -148,7 +132,6 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
     <div style="font-size:.78rem;color:#CCC;margin-top:4px">Aura: <span id="nome-aura">Nenhuma</span></div>
     <div class="eq-grid" id="equipamentos"></div>
   </div>
-
   <div class="coluna">
     <div id="pag-hunt" class="pagina mostra">
       <div class="tit-coluna">🗺️ Áreas de Caça</div>
@@ -161,11 +144,10 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
           <button class="btn-qtd" data-qtd="4-6">4–6</button>
           <button class="btn-qtd" data-qtd="6-8">6–8</button>
         </div>
-
         <div class="analyzer">
           <div class="tit-coluna" style="margin:0 0 6px 0;padding:0;border:none">📊 Analisador de Caça</div>
           <div class="analyzer-grid">
-            <div>⏱️ Tempo total: <span id="a-tempo">00:00</span></div>
+            <div>⏱️ Tempo: <span id="a-tempo">00:00</span></div>
             <div>🌊 Ondas: <span id="a-ondas">0</span></div>
             <div>⭐ XP/h: <span class="valor-xp" id="a-xph">0</span></div>
             <div>💰 Ouro/h: <span class="valor-ouro" id="a-ouroh">0</span></div>
@@ -173,7 +155,6 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
             <div>📈 Média XP/onda: <span id="a-xponda">0</span></div>
           </div>
         </div>
-
         <div class="arena">
           <div class="pc" id="pc-sprite">🧙‍♂️</div>
           <div class="nome-mon" id="nome-mon">—</div>
@@ -186,7 +167,6 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
           <button class="btn mini" onclick="comprarStamina()">⚡ +1h Stamina (500)</button>
         </div>
         <div class="log-area" id="log"></div>
-
         <div class="inv-bloco">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div class="tit-coluna" style="margin:0;padding:0;border:none">🎒 Inventário (<span id="qtd-inv">0</span>/40)</div>
@@ -197,9 +177,8 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
           </div>
           <div class="inv-grid" id="inv-grid"></div>
         </div>
-
         <div class="venda-config">
-          <div style="font-weight:bold;margin-bottom:8px;color:var(--ouro-brilhante)">💰 Venda Automática — Itens que serão vendidos ao dropar</div>
+          <div style="font-weight:bold;margin-bottom:8px;color:var(--ouro-brilhante)">💰 Venda Automática</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
             <div class="linha-check"><input type="checkbox" id="v-comum" checked> <span style="color:var(--comum)">Comum</span></div>
             <div class="linha-check"><input type="checkbox" id="v-incomum"> <span style="color:var(--incomum)">Incomum</span></div>
@@ -210,11 +189,10 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
             <div class="linha-check"><input type="checkbox" id="v-divino"> <span style="color:var(--divino)">Divino</span></div>
             <div class="linha-check"><input type="checkbox" id="v-ultra"> <span style="color:var(--ultra)">Ultra Divino</span></div>
           </div>
-          <button class="btn mini" style="margin-top:8px" onclick="salvarVendaConfig()">✅ Salvar Configuração</button>
+          <button class="btn mini" style="margin-top:8px" onclick="salvarVendaConfig()">✅ Salvar</button>
         </div>
       </div>
     </div>
-
     <div id="pag-minerar" class="pagina">
       <div class="tit-coluna">⛏️ Mineração</div>
       <div class="mineracao-area">
@@ -223,29 +201,17 @@ input[type=checkbox]{accent-color:var(--ouro-brilhante);width:14px;height:14px;c
         <button class="btn" id="btn-minerar" onclick="iniciarMineracao()">⛏️ Iniciar Mineração</button>
       </div>
     </div>
-
-    <div id="pag-craft" class="pagina">
-      <div class="tit-coluna">🔨 Craftar</div>
-      <p style="padding:10px">Sistema de craft em desenvolvimento...</p>
-    </div>
-    <div id="pag-dungeon" class="pagina">
-      <div class="tit-coluna">🏰 Masmorra</div>
-      <p style="padding:10px">Sistema de masmorra em desenvolvimento...</p>
-    </div>
-    <div id="pag-boss" class="pagina">
-      <div class="tit-coluna">👹 Chefes</div>
-      <p style="padding:10px">Sistema de Boss em desenvolvimento...</p>
-    </div>
+    <div id="pag-craft" class="pagina"><div class="tit-coluna">🔨 Craftar</div><p style="padding:10px">Em desenvolvimento...</p></div>
+    <div id="pag-dungeon" class="pagina"><div class="tit-coluna">🏰 Masmorra</div><p style="padding:10px">Em desenvolvimento...</p></div>
+    <div id="pag-boss" class="pagina"><div class="tit-coluna">👹 Chefes</div><p style="padding:10px">Em desenvolvimento...</p></div>
   </div>
-
   <div class="coluna">
     <div class="tit-coluna">📋 Detalhes do Item</div>
-    <div id="item-detalhe">Clique em um item do inventário para ver detalhes, atributos e refinar.</div>
+    <div id="item-detalhe">Clique em um item para ver detalhes.</div>
   </div>
 </div>
-
 <script>
-const RARIDADES = [
+const RARIDADES=[
   {id:'comum',nome:'Comum',cor:'silver',atrib:1},
   {id:'incomum',nome:'Incomum',cor:'limegreen',atrib:2},
   {id:'raro',nome:'Raro',cor:'royalblue',atrib:3},
@@ -255,8 +221,8 @@ const RARIDADES = [
   {id:'divino',nome:'Divino',cor:'gold',atrib:7},
   {id:'ultra',nome:'Ultra Divino',cor:'ivory',atrib:8}
 ];
-const ATRIBUTOS_NOMES = ['Vida','Mana','Dano','Defesa','Velocidade','XP%','Ouro%','Drop%'];
-const AURAS = [
+const ATRIBUTOS_NOMES=['Vida','Mana','Dano','Defesa','Velocidade','XP%','Ouro%','Drop%'];
+const AURAS=[
   {min:0,nome:'Nenhuma',cor:'transparent',bonus:''},
   {min:10,nome:'Branca',cor:'rgba(255,255,255,.3)',bonus:'+1% XP'},
   {min:50,nome:'Verde',cor:'rgba(50,205,50,.3)',bonus:'+2% XP +1% Dano'},
@@ -264,10 +230,9 @@ const AURAS = [
   {min:200,nome:'Dourada',cor:'rgba(255,215,0,.35)',bonus:'+5% XP +3% Dano +2% Ouro +1% Drop'},
   {min:500,nome:'Lendária',cor:'rgba(255,140,0,.4)',bonus:'+8% XP +5% Dano +3% Ouro +2% Drop'},
   {min:1000,nome:'Mítica',cor:'rgba(255,20,147,.4)',bonus:'+12% XP +7% Dano +4% Ouro +3% Drop +2% Velocidade'},
-  {min:2000,nome:'Divina',cor:'rgba(255,215,0,.5)',bonus:'+15% XP +10% Dano +5% Ouro +4% Drop +3% Velocidade +5% Vida'},
+  {min:2000,nome:'Divina',cor:'rgba(255,215,0,.5)',bonus:'+15% XP +10% Dano +5% Ouro +4% Drop +3% Velocidade +5% Vida'}
 ];
-
-const MONSTROS_TIBIA = [
+const MONSTROS_TIBIA=[
   {n:'Rato',i:'🐀',v:40,d:4,e:12,g:2,drops:[{t:'arma',i:'🗡️',n:'Adaga Enferrujada',v:5}]},
   {n:'Aranha',i:'🕷️',v:55,d:6,e:18,g:3,drops:[{t:'armadura',i:'👢',n:'Botas Rasgadas',v:6}]},
   {n:'Lobo',i:'🐺',v:80,d:9,e:28,g:5,drops:[{t:'arma',i:'⚔️',n:'Espada de Lobo',v:18}]},
@@ -277,287 +242,43 @@ const MONSTROS_TIBIA = [
   {n:'Esqueleto',i:'💀',v:180,d:19,e:75,g:20,drops:[{t:'arma',i:'🦴',n:'Cajado Ósseo',v:120}]},
   {n:'Cobra',i:'🐍',v:120,d:14,e:45,g:10,drops:[{t:'consumivel',i:'🧪',n:'Veneno',v:30}]}
 ];
-
-const HUNTS = [
-  {id:'floresta',nome:'🌲 Floresta Iniciante',minLvl:1,maxLvl:15,
-   monstros:MONSTROS_TIBIA.filter(m=>['Rato','Aranha','Lobo','Cobra'].includes(m.n))},
-  {id:'caverna',nome:'⛰️ Caverna Escura',minLvl:16,maxLvl:30,
-   monstros:MONSTROS_TIBIA.filter(m=>['Goblin','Troll','Esqueleto','Orc'].includes(m.n))}
+const HUNTS=[
+  {id:'floresta',nome:'🌲 Floresta Iniciante',minLvl:1,maxLvl:15,monstros:MONSTROS_TIBIA.filter(m=>['Rato','Aranha','Lobo','Cobra'].includes(m.n))},
+  {id:'caverna',nome:'⛰️ Caverna Escura',minLvl:16,maxLvl:30,monstros:MONSTROS_TIBIA.filter(m=>['Goblin','Troll','Esqueleto','Orc'].includes(m.n))}
 ];
-
-let jogador = {
-  lvl:1,exp:0,ouro:0,vidaPct:100,manaPct:100,stamina:480,
-  refinoTotal:0,equip:{cabeca:null,peito:null,maos:null,pernas:null,anel:null,amuleto:null,municao:null,bolsa:null},
-  inv:[],venda:{comum:true,incomum:false,raro:false,epico:false,lendario:false,mitico:false,divino:false,ultra:false},
-  qtdMonstros:'1-2',huntAtiva:null,monstro:null,vidaMonstro:0,ondas:0,tempo:0,rodando:false,tipoAcao:null,
-  expTotal:0,ouroTotal:0,itensTotal:0,tempoInicio:0
-};
-let timerJogo = null;
-
-function salvar(){ localStorage.setItem('idle-realms-tibia', JSON.stringify(jogador)); }
-function carregar(){
-  let s = localStorage.getItem('idle-realms-tibia');
-  if(s){ jogador = {...jogador, ...JSON.parse(s)}; }
-}
-
-carregar();
-atualizarTela();
-renderizarHunts();
-renderizarInventario();
-renderizarEquipamentos();
-carregarVendaConfig();
-
-function mostrarAba(nome){
-  document.querySelectorAll('.aba').forEach(a=>a.classList.remove('ativa'));
-  document.querySelectorAll('.pagina').forEach(p=>p.classList.remove('mostra'));
-  event.target.classList.add('ativa');
-  document.getElementById('pag-'+nome).classList.add('mostra');
-}
-
-function formatarStamina(min){
-  let h = Math.floor(min/60), m = min%60;
-  return `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}`;
-}
-function comprarStamina(){
-  if(jogador.ouro >= 500){
-    jogador.ouro -= 500;
-    jogador.stamina = Math.min(480, jogador.stamina + 60);
-    adicionarLog('⚡ Comprou 1h de stamina por 500 ouro!','ouro');
-    salvar(); atualizarTela();
-  }else{ alert('Ouro insuficiente! Precisa de 500 ouro.'); }
-}
-
-function renderizarHunts(){
-  let html = '';
-  HUNTS.forEach(h=>{
-    let b = jogador.lvl < h.minLvl || jogador.lvl > h.maxLvl;
-    html += `<div class="hunt-card ${b?'bloq':''}" ${b?'':`onclick="entrarHunt('${h.id}')"`}>
-      <strong>${h.nome}</strong><br>
-      <small>Nível ${h.minLvl}–${h.maxLvl} | Monstros: ${h.monstros.map(m=>m.i).join(' ')} ${b?'🔒 Bloqueado':'✅ Disponível'}</small>
-    </div>`;
-  });
-  document.getElementById('lista-hunts').innerHTML = html;
-}
-
-document.querySelectorAll('.btn-qtd').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.btn-qtd').forEach(x=>x.classList.remove('ativa'));
-    b.classList.add('ativa');
-    jogador.qtdMonstros = b.dataset.qtd;
-  });
-});
-document.querySelector('.btn-qtd').classList.add('ativa');
-
-function entrarHunt(id){
-  if(jogador.stamina <= 0){ alert('Sem stamina! Compre por 500 ouro.'); return; }
-  jogador.huntAtiva = HUNTS.find(h=>h.id===id);
-  jogador.tipoAcao = 'caca';
-  document.getElementById('lista-hunts').style.display = 'none';
-  document.getElementById('area-batalha').style.display = 'block';
-  jogador.ondas = 0; jogador.tempo = 0;
-  jogador.expTotal = 0; jogador.ouroTotal = 0; jogador.itensTotal = 0;
-  jogador.tempoInicio = Date.now();
-  novoMonstro(); iniciarLoop();
-}
-
-function iniciarMineracao(){
-  if(jogador.stamina <= 0){ alert('Sem stamina!'); return; }
-  if(jogador.rodando){ pararAcao(); return; }
-  jogador.tipoAcao = 'minerar';
-  jogador.rodando = true;
-  timerJogo = setInterval(loopMineracao, 2000);
-  document.getElementById('btn-minerar').textContent = '⏹️ Parar Mineração';
-}
-function loopMineracao(){
-  if(jogador.stamina <= 0){ pararAcao(); alert('Stamina esgotada!'); return; }
-  jogador.stamina--;
-  let rec = ['Ferro','Carvão','Cobre','Ouro'][Math.floor(Math.random()*4)];
-  jogador.ouro += Math.floor(Math.random()*3)+1;
-  document.getElementById('recursos').textContent = rec;
-  atualizarTela(); salvar();
-}
-
-function atualizarAnalyzer(){
-  let seg = jogador.tempo;
-  let h = Math.floor(seg/3600), m = Math.floor((seg%3600)/60), s = seg%60;
-  document.getElementById('a-tempo').textContent = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-  document.getElementById('a-ondas').textContent = jogador.ondas;
-  let horas = seg / 3600 || 0.0001;
-  let xph = Math.floor(jogador.expTotal / horas);
-  let ouroh = Math.floor(jogador.ouroTotal / horas);
-  let itensh = Math.floor(jogador.itensTotal / horas);
-  let xpOnda = jogador.ondas > 0 ? Math.floor(jogador.expTotal / jogador.ondas) : 0;
-  document.getElementById('a-xph').textContent = xph.toLocaleString();
-  document.getElementById('a-ouroh').textContent = ouroh.toLocaleString();
-  document.getElementById('a-itensh').textContent = itensh.toLocaleString();
-  document.getElementById('a-xponda').textContent = xpOnda.toLocaleString();
-}
-
-function novoMonstro(){
-  let qtd = jogador.qtdMonstros.split('-').map(Number);
-  qtd = qtd[0] + Math.floor(Math.random()*(qtd[1]-qtd[0]+1));
-  jogador.ondas++;
-  let ehBoss = jogador.ondas % 100 === 0;
-  let m = jogador.huntAtiva.monstros[Math.floor(Math.random()*jogador.huntAtiva.monstros.length)];
-  jogador.monstro = {...m};
-  jogador.vidaMonstro = ehBoss ? m.v * 3 : m.v;
-  if(ehBoss){ jogador.monstro.n = '👹 '+m.n+' (Fortalecido)'; jogador.monstro.e = Math.floor(m.e * 2.5); jogador.monstro.g = Math.floor(m.g * 3); }
-  document.getElementById('nome-mon').textContent = jogador.monstro.n;
-  document.getElementById('mon-sprite').textContent = jogador.monstro.i;
-  document.getElementById('mon-sprite').classList.remove('morto');
-  atualizarBarraMonstro();
-  adicionarLog(`🔍 ${jogador.monstro.n} apareceu! (Ondas: ${jogador.ondas})`,'destaque');
-  atualizarAnalyzer();
-}
-function atualizarBarraMonstro(){
-  let vidaMax = jogador.ondas%100===0 ? jogador.monstro.v*3 : jogador.monstro.v;
-  let p = Math.max(0, jogador.vidaMonstro / vidaMax * 100);
-  document.getElementById('barra-mon').style.width = p+'%';
-}
-function adicionarLog(t,cl=''){
-  let l = document.getElementById('log');
-  l.innerHTML += `<div class="${cl}">${t}</div>`;
-  l.scrollTop = l.scrollHeight;
-}
-function iniciarLoop(){ jogador.rodando = true; timerJogo = setInterval(loopBatalha, 1000); }
-function alternarPausa(){
-  if(jogador.rodando){ clearInterval(timerJogo); jogador.rodando = false; document.getElementById('btn-pausa').textContent='▶️ Continuar'; }
-  else { iniciarLoop(); document.getElementById('btn-pausa').textContent='⏸️ Pausar'; }
-}
-function pararAcao(){
-  clearInterval(timerJogo); jogador.rodando = false;
-  document.getElementById('area-batalha').style.display='none';
-  document.getElementById('lista-hunts').style.display='block';
-  document.getElementById('btn-minerar').textContent='⛏️ Iniciar Mineração';
-}
-function calcularAtributos(lvl){
-  let vidaMax = 80 + lvl*12, manaMax = 20 + lvl*3;
-  let b = {dano:0,def:0,vida:0,mana:0,xp:0,ouro:0,drop:0,vel:0};
-  for(let t in jogador.equip){
-    if(jogador.equip[t]){
-      let ref = jogador.equip[t].refino||0;
-      b.dano += (jogador.equip[t].b?.dano||0) * (1 + ref*0.05);
-      b.def += (jogador.equip[t].b?.def||0) * (1 + ref*0.05);
-      b.vida += (jogador.equip[t].b?.vida||0) * (1 + ref*0.05);
-    }
-  }
-  let aura = AURAS.filter(a=>jogador.refinoTotal >= a.min).pop();
-  if(aura){
-    b.xp += parseFloat(aura.bonus.match(/(\d+)% XP/)?.[1]||0);
-    b.dano += b.dano * parseFloat(aura.bonus.match(/(\d+)% Dano/)?.[1]||0)/100;
-    b.ouro += parseFloat(aura.bonus.match(/(\d+)% Ouro/)?.[1]||0);
-    b.drop += parseFloat(aura.bonus.match(/(\d+)% Drop/)?.[1]||0);
-  }
-  return {vidaMax,manaMax,danoBase:Math.floor(6+lvl*0.4+b.dano),def:Math.floor(5+lvl*0.3+b.def),xpPct:b.xp,ouroPct:b.ouro,dropPct:b.drop};
-}
-function loopBatalha(){
-  if(jogador.stamina <= 0){ pararAcao(); alert('Stamina esgotada! Compre por 500 ouro.'); return; }
-  jogador.stamina--; jogador.tempo++;
-  let atr = calcularAtributos(jogador.lvl);
-  jogador.vidaPct = Math.min(100, jogador.vidaPct + 0.8/(atr.vidaMax/100));
-  jogador.manaPct = Math.min(100, jogador.manaPct + 0.2/(atr.manaMax/100));
-  if(jogador.vidaPct < 40){ jogador.vidaPct = Math.min(100, jogador.vidaPct + 35); adicionarLog('❤️ Poção de Vida!','cura'); }
-  if(jogador.manaPct < 30){ jogador.manaPct = Math.min(100, jogador.manaPct + 35); adicionarLog('💧 Poção de Mana!','cura'); }
-  let dano = Math.floor(atr.danoBase * (0.85+Math.random()*0.3));
-  jogador.vidaMonstro -= dano;
-  document.getElementById('pc-sprite').classList.add('atacando');
-  setTimeout(()=>document.getElementById('pc-sprite').classList.remove('atacando'),250);
-  adicionarLog(`⚔️ Causou ${dano} de dano!`,'dano');
-  atualizarBarraMonstro();
-  if(jogador.vidaMonstro <= 0){
-    let expG = Math.floor(jogador.monstro.e * (1 + atr.xpPct/100));
-    let ouroG = Math.floor(jogador.monstro.g * (1 + atr.ouroPct/100));
-    jogador.exp += expG; jogador.ouro += ouroG;
-    jogador.expTotal += expG; jogador.ouroTotal += ouroG;
-    adicionarLog(`💀 ${jogador.monstro.n} morto! +${expG} EXP +${ouroG} Ouro`,'destaque');
-    if(jogador.exp >= jogador.lvl*100){ jogador.exp -= jogador.lvl*100; jogador.lvl++; adicionarLog(`🎉 Subiu para nível ${jogador.lvl}!`,'destaque'); }
-    if(jogador.monstro.drops && Math.random() < 0.65 + atr.dropPct/100){
-      let rnd = Math.random();
-      let raridadeIdx = rnd < 0.15 ? 0 : rnd < 0.27 ? 1 : rnd < 0.38 ? 2 : rnd < 0.48 ? 3 : rnd < 0.56 ? 4 : rnd < 0.62 ? 5 : rnd < 0.66 ? 6 : 7;
-      let raridade = RARIDADES[raridadeIdx];
-      let atbs = [];
-      for(let i=0;i<raridade.atrib;i++){ atbs.push({n:ATRIBUTOS_NOMES[Math.floor(Math.random()*8)],v:Math.floor(Math.random()*15)+3}); }
-      let item = {...jogador.monstro.drops[0], rar:raridade.id, rn:raridade.nome, cor:raridade.cor, atributos:atbs, refino:0};
-      if(deveVender(item)){ jogador.ouro += item.v; jogador.ouroTotal += item.v; adicionarLog(`💰 ${item.n} (${item.rn}) vendido! +${item.v} ouro`,'ouro'); }
-      else { if(jogador.inv.length<40){ jogador.inv.push(item); jogador.itensTotal++; adicionarLog(`🎒 Drop: ${item.n} (${item.rn})`,'destaque'); } else { adicionarLog(`⚠️ Inventário cheio!`,'dano'); } }
-    }
-    document.getElementById('mon-sprite').classList.add('morto');
-    setTimeout(novoMonstro,1200);
-  } else {
-    let danoR = Math.max(1, Math.floor(jogador.monstro.d * (0.85+Math.random()*0.3) - atr.def*0.2));
-    jogador.vidaPct = Math.max(0, jogador.vidaPct - danoR/(atr.vidaMax/100));
-    document.getElementById('mon-sprite').classList.add('dano');
-    setTimeout(()=>document.getElementById('mon-sprite').classList.remove('dano'),150);
-    adicionarLog(`💔 Sofreu ${danoR} de dano`,'dano');
-    if(jogador.vidaPct <= 0){ pararAcao(); alert('☠️ Derrotado! Vida restaurada.'); jogador.vidaPct=30; jogador.manaPct=30; }
-  }
-  atualizarTela(); atualizarAnalyzer(); renderizarInventario(); salvar();
-}
-
-function refinarItem(idx){
-  let item = jogador.inv[idx];
-  if(!item || item.refino>=10){ alert('Já está no máximo!'); return; }
-  let custo = Math.floor(50 * Math.pow(1.5, item.refino));
-  if(jogador.ouro < custo){ alert(`Precisa de ${custo} ouro!`); return; }
-  jogador.ouro -= custo;
-  item.refino++;
-  jogador.refinoTotal++;
-  adicionarLog(`🔧 ${item.n} refinado para +${item.refino}!`,'destaque');
-  renderizarInventario(); atualizarTela(); salvar();
-  mostrarItem(idx);
-}
-
-function renderizarInventario(){
-  let html = '';
-  jogador.inv.forEach((item,i)=>{ html += `<div class="inv-slot r-${item.rar}" title="${item.n} (+${item.refino})" onclick="mostrarItem(${i})">${item.i}</div>`; });
-  document.getElementById('inv-grid').innerHTML = html;
-  document.getElementById('qtd-inv').textContent = jogador.inv.length;
-}
-function mostrarItem(i){
-  let item = jogador.inv[i];
-  let atbsHtml = item.atributos.map(a=>`<div class="atributo">+${a.v} ${a.n}</div>`).join('');
-  let custoRef = Math.floor(50 * Math.pow(1.5, item.refino));
-  document.getElementById('item-detalhe').innerHTML = `
-    <div class="item-nome" style="color:${item.cor}">${item.i} ${item.n}</div>
-    <div><strong>Raridade:</strong> ${item.rn}</div>
-    <div><strong>Valor de venda:</strong> ${item.v} ouro</div>
-    <div><strong>Refino atual:</strong> +${item.refino}/10</div>
-    <div style="margin-top:6px"><strong>Atributos:</strong></div>
-    ${atbsHtml||'<div class="atributo">Nenhum atributo</div>'}
-    <div class="refino-area">
-      <div>Progresso de refino:</div>
-      <div class="refino-barra"><div style="width:${item.refino*10}%"></div></div>
-      <button class="btn" style="width:100%;margin-top:6px" onclick="refinarItem(${i})" ${item.refino>=10?'disabled':''}>🔧 Refinar (${custoRef} ouro)</button>
-    </div>
-  `;
-}
-function venderTodos(){ let t=0; jogador.inv.forEach(i=>t+=i.v); jogador.ouro+=t; jogador.inv=[]; alert(`Vendeu tudo por ${t} ouro!`); salvar(); atualizarTela(); renderizarInventario(); }
-function esvaziarInv(){ if(confirm('Apagar todos sem ganhar ouro?')){jogador.inv=[];salvar();renderizarInventario();} }
-
-function deveVender(item){ return jogador.venda[item.rar]; }
-function carregarVendaConfig(){
-  ['comum','incomum','raro','epico','lendario','mitico','divino','ultra'].forEach(r=>{
-    document.getElementById('v-'+r).checked = jogador.venda[r];
-  });
-}
-function salvarVendaConfig(){
-  ['comum','incomum','raro','epico','lendario','mitico','divino','ultra'].forEach(r=>{
-    jogador.venda[r] = document.getElementById('v-'+r).checked;
-  });
-  salvar(); alert('Configuração salva! ✅');
-}
-
-function renderizarEquipamentos(){
-  let slots = ['cabeca','peito','maos','pernas','anel','amuleto','municao','bolsa'];
-  let icones = ['🧢','👕','🗡️','👢','💍','📿','🏹','🎒'];
-  let nomes = ['Cabeça','Peito','Arma','Pernas','Anel','Amuleto','Munição','Bolsa'];
-  let html = '';
-  slots.forEach((s,i)=>{
-    let eq = jogador.equip[s];
-    html += `<div class="eq-slot ${eq?'tem':''}" title="${eq?eq.n:nomes[i]}">${eq?eq.i:icones[i]}<div class="eq-nome">${eq?eq.n.substring(0,6)+'…':nomes[i]}</div></div>`;
-  });
-  document.getElementById('equipamentos').innerHTML = html;
-}
-function atualizarAura(){
-  let aura = AURAS.filter(a=>jogador.refinoTotal >= a.min).pop()||AURAS[0];
-  document.getElementById('nome-aura').textContent = aura.nome + (aura.bonus?` (${aura
+let jogador={lvl:1,exp:0,ouro:0,vidaPct:100,manaPct:100,stamina:480,refinoTotal:0,equip:{cabeca:null,peito:null,maos:null,pernas:null,anel:null,amuleto:null,municao:null,bolsa:null},inv:[],venda:{comum:true,incomum:false,raro:false,epico:false,lendario:false,mitico:false,divino:false,ultra:false},qtdMonstros:'1-2',huntAtiva:null,monstro:null,vidaMonstro:0,ondas:0,tempo:0,rodando:false,tipoAcao:null,expTotal:0,ouroTotal:0,itensTotal:0};
+let timerJogo=null;
+function salvar(){localStorage.setItem('idle-realms-tibia',JSON.stringify(jogador));}
+function carregar(){let s=localStorage.getItem('idle-realms-tibia');if(s){jogador={...jogador,...JSON.parse(s)};}}
+carregar();atualizarTela();renderizarHunts();renderizarInventario();renderizarEquipamentos();carregarVendaConfig();
+function mostrarAba(nome){document.querySelectorAll('.aba').forEach(a=>a.classList.remove('ativa'));document.querySelectorAll('.pagina').forEach(p=>p.classList.remove('mostra'));event.target.classList.add('ativa');document.getElementById('pag-'+nome).classList.add('mostra');}
+function formatarStamina(min){let h=Math.floor(min/60),m=min%60;return `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}`;}
+function comprarStamina(){if(jogador.ouro>=500){jogador.ouro-=500;jogador.stamina=Math.min(480,jogador.stamina+60);adicionarLog('⚡ Comprou 1h de stamina!','ouro');salvar();atualizarTela();}else{alert('Precisa de 500 ouro!');}}
+function renderizarHunts(){let html='';HUNTS.forEach(h=>{let b=jogador.lvl<h.minLvl||jogador.lvl>h.maxLvl;html+=`<div class="hunt-card ${b?'bloq':''}" ${b?'':`onclick="entrarHunt('${h.id}')"`}><strong>${h.nome}</strong><br><small>Nível ${h.minLvl}–${h.maxLvl} | Monstros: ${h.monstros.map(m=>m.i).join(' ')} ${b?'🔒 Bloqueado':'✅ Disponível'}</small></div>`;});document.getElementById('lista-hunts').innerHTML=html;}
+document.querySelectorAll('.btn-qtd').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.btn-qtd').forEach(x=>x.classList.remove('ativa'));b.classList.add('ativa');jogador.qtdMonstros=b.dataset.qtd;});});document.querySelector('.btn-qtd').classList.add('ativa');
+function entrarHunt(id){if(jogador.stamina<=0){alert('Sem stamina!');return;}jogador.huntAtiva=HUNTS.find(h=>h.id===id);jogador.tipoAcao='caca';document.getElementById('lista-hunts').style.display='none';document.getElementById('area-batalha').style.display='block';jogador.ondas=0;jogador.tempo=0;jogador.expTotal=0;jogador.ouroTotal=0;jogador.itensTotal=0;novoMonstro();iniciarLoop();}
+function iniciarMineracao(){if(jogador.stamina<=0){alert('Sem stamina!');return;}if(jogador.rodando){pararAcao();return;}jogador.tipoAcao='minerar';jogador.rodando=true;timerJogo=setInterval(loopMineracao,2000);document.getElementById('btn-minerar').textContent='⏹️ Parar Mineração';}
+function loopMineracao(){if(jogador.stamina<=0){pararAcao();alert('Stamina esgotada!');return;}jogador.stamina--;let rec=['Ferro','Carvão','Cobre','Ouro'][Math.floor(Math.random()*4)];jogador.ouro+=Math.floor(Math.random()*3)+1;document.getElementById('recursos').textContent=rec;atualizarTela();salvar();}
+function atualizarAnalyzer(){let seg=jogador.tempo;let h=Math.floor(seg/3600),m=Math.floor((seg%3600)/60),s=seg%60;document.getElementById('a-tempo').textContent=`${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;document.getElementById('a-ondas').textContent=jogador.ondas;let horas=seg/3600||0.0001;let xph=Math.floor(jogador.expTotal/horas);let ouroh=Math.floor(jogador.ouroTotal/horas);let itensh=Math.floor(jogador.itensTotal/horas);let xpOnda=jogador.ondas>0?Math.floor(jogador.expTotal/jogador.ondas):0;document.getElementById('a-xph').textContent=xph.toLocaleString();document.getElementById('a-ouroh').textContent=ouroh.toLocaleString();document.getElementById('a-itensh').textContent=itensh.toLocaleString();document.getElementById('a-xponda').textContent=xpOnda.toLocaleString();}
+function novoMonstro(){let qtd=jogador.qtdMonstros.split('-').map(Number);qtd=qtd[0]+Math.floor(Math.random()*(qtd[1]-qtd[0]+1));jogador.ondas++;let ehBoss=jogador.ondas%100===0;let m=jogador.huntAtiva.monstros[Math.floor(Math.random()*jogador.huntAtiva.monstros.length)];jogador.monstro={...m};jogador.vidaMonstro=ehBoss?m.v*3:m.v;if(ehBoss){jogador.monstro.n='👹 '+m.n+' (Fortalecido)';jogador.monstro.e=Math.floor(m.e*2.5);jogador.monstro.g=Math.floor(m.g*3);}document.getElementById('nome-mon').textContent=jogador.monstro.n;document.getElementById('mon-sprite').textContent=jogador.monstro.i;document.getElementById('mon-sprite').classList.remove('morto');atualizarBarraMonstro();adicionarLog(`🔍 ${jogador.monstro.n} apareceu! (Ondas: ${jogador.ondas})`,'destaque');atualizarAnalyzer();}
+function atualizarBarraMonstro(){let vidaMax=jogador.ondas%100===0?jogador.monstro.v*3:jogador.monstro.v;let p=Math.max(0,jogador.vidaMonstro/vidaMax*100);document.getElementById('barra-mon').style.width=p+'%';}
+function adicionarLog(t,cl=''){let l=document.getElementById('log');l.innerHTML+=`<div class="${cl}">${t}</div>`;l.scrollTop=l.scrollHeight;}
+function iniciarLoop(){jogador.rodando=true;timerJogo=setInterval(loopBatalha,1000);}
+function alternarPausa(){if(jogador.rodando){clearInterval(timerJogo);jogador.rodando=false;document.getElementById('btn-pausa').textContent='▶️ Continuar';}else{iniciarLoop();document.getElementById('btn-pausa').textContent='⏸️ Pausar';}}
+function pararAcao(){clearInterval(timerJogo);jogador.rodando=false;document.getElementById('area-batalha').style.display='none';document.getElementById('lista-hunts').style.display='block';document.getElementById('btn-minerar').textContent='⛏️ Iniciar Mineração';}
+function calcularAtributos(lvl){let vidaMax=80+lvl*12,manaMax=20+lvl*3;let b={dano:0,def:0,vida:0,mana:0,xp:0,ouro:0,drop:0};for(let t in jogador.equip){if(jogador.equip[t]){let ref=jogador.equip[t].refino||0;b.dano+=(jogador.equip[t].b?.dano||0)*(1+ref*0.05);b.def+=(jogador.equip[t].b?.def||0)*(1+ref*0.05);b.vida+=(jogador.equip[t].b?.vida||0)*(1+ref*0.05);}}};let aura=AURAS.filter(a=>jogador.refinoTotal>=a.min).pop();if(aura){b.xp+=parseFloat(aura.bonus.match(/(\d+)% XP/)?.[1]||0);b.dano+=b.dano*parseFloat(aura.bonus.match(/(\d+)% Dano/)?.[1]||0)/100;b.ouro+=parseFloat(aura.bonus.match(/(\d+)% Ouro/)?.[1]||0);b.drop+=parseFloat(aura.bonus.match(/(\d+)% Drop/)?.[1]||0);}return{vidaMax,manaMax,danoBase:Math.floor(6+lvl*0.4+b.dano),def:Math.floor(5+lvl*0.3+b.def),xpPct:b.xp,ouroPct:b.ouro,dropPct:b.drop};}
+function loopBatalha(){if(jogador.stamina<=0){pararAcao();alert('Stamina esgotada! Compre por 500 ouro.');return;}jogador.stamina--;jogador.tempo++;let atr=calcularAtributos(jogador.lvl);jogador.vidaPct=Math.min(100,jogador.vidaPct+0.8/(atr.vidaMax/100));jogador.manaPct=Math.min(100,jogador.manaPct+0.2/(atr.manaMax/100));if(jogador.vidaPct<40){jogador.vidaPct=Math.min(100,jogador.vidaPct+35);adicionarLog('❤️ Poção de Vida!','cura');}if(jogador.manaPct<30){jogador.manaPct=Math.min(100,jogador.manaPct+35);adicionarLog('💧 Poção de Mana!','cura');}let dano=Math.floor(atr.danoBase*(0.85+Math.random()*0.3));jogador.vidaMonstro-=dano;document.getElementById('pc-sprite').classList.add('atacando');setTimeout(()=>document.getElementById('pc-sprite').classList.remove('atacando'),250);adicionarLog(`⚔️ Causou ${dano} de dano!`,'dano');atualizarBarraMonstro();if(jogador.vidaMonstro<=0){let expG=Math.floor(jogador.monstro.e*(1+atr.xpPct/100));let ouroG=Math.floor(jogador.monstro.g*(1+atr.ouroPct/100));jogador.exp+=expG;jogador.ouro+=ouroG;jogador.expTotal+=expG;jogador.ouroTotal+=ouroG;adicionarLog(`💀 ${jogador.monstro.n} morto! +${expG} EXP +${ouroG} Ouro`,'destaque');if(jogador.exp>=jogador.lvl*100){jogador.exp-=jogador.lvl*100;jogador.lvl++;adicionarLog(`🎉 Subiu para nível ${jogador.lvl}!`,'destaque');}if(jogador.monstro.drops&&Math.random()<0.65+atr.dropPct/100){let rnd=Math.random();let raridadeIdx=rnd<0.15?0:rnd<0.27?1:rnd<0.38?2:rnd<0.48?3:rnd<0.56?4:rnd<0.62?5:rnd<0.66?6:7;let raridade=RARIDADES[raridadeIdx];let atbs=[];for(let i=0;i<raridade.atrib;i++){atbs.push({n:ATRIBUTOS_NOMES[Math.floor(Math.random()*8)],v:Math.floor(Math.random()*15)+3});}let item={...jogador.monstro.drops[0],rar:raridade.id,rn:raridade.nome,cor:raridade.cor,atributos:atbs,refino:0};if(deveVender(item)){jogador.ouro+=item.v;jogador.ouroTotal+=item.v;adicionarLog(`💰 ${item.n} (${item.rn}) vendido! +${item.v} ouro`,'ouro');}else{if(jogador.inv.length<40){jogador.inv.push(item);jogador.itensTotal++;adicionarLog(`🎒 Drop: ${item.n} (${item.rn})`,'destaque');}else{adicionarLog(`⚠️ Inventário cheio!`,'dano');}}}document.getElementById('mon-sprite').classList.add('morto');setTimeout(novoMonstro,1200);}else{let danoR=Math.max(1,Math.floor(jogador.monstro.d*(0.85+Math.random()*0.3)-atr.def*0.2));jogador.vidaPct=Math.max(0,jogador.vidaPct-danoR/(atr.vidaMax/100));document.getElementById('mon-sprite').classList.add('dano');setTimeout(()=>document.getElementById('mon-sprite').classList.remove('dano'),150);adicionarLog(`💔 Sofreu ${danoR} de dano`,'dano');if(jogador.vidaPct<=0){pararAcao();alert('☠️ Derrotado! Vida restaurada.');jogador.vidaPct=30;jogador.manaPct=30;}}atualizarTela();atualizarAnalyzer();renderizarInventario();salvar();}
+function refinarItem(idx){let item=jogador.inv[idx];if(!item||item.refino>=10){alert('Já está no máximo!');return;}let custo=Math.floor(50*Math.pow(1.5,item.refino));if(jogador.ouro<custo){alert(`Precisa de ${custo} ouro!`);return;}jogador.ouro-=custo;item.refino++;jogador.refinoTotal++;adicionarLog(`🔧 ${item.n} refinado para +${item.refino}!`,'destaque');renderizarInventario();atualizarTela();salvar();mostrarItem(idx);}
+function renderizarInventario(){let html='';jogador.inv.forEach((item,i)=>{html+=`<div class="inv-slot r-${item.rar}" title="${item.n} (+${item.refino})" onclick="mostrarItem(${i})">${item.i}</div>`;});document.getElementById('inv-grid').innerHTML=html;document.getElementById('qtd-inv').textContent=jogador.inv.length;}
+function mostrarItem(i){let item=jogador.inv[i];let atbsHtml=item.atributos.map(a=>`<div class="atributo">+${a.v} ${a.n}</div>`).join('');let custoRef=Math.floor(50*Math.pow(1.5,item.refino));document.getElementById('item-detalhe').innerHTML=`<div class="item-nome" style="color:${item.cor}">${item.i} ${item.n}</div><div><strong>Raridade:</strong> ${item.rn}</div><div><strong>Valor de venda:</strong> ${item.v} ouro</div><div><strong>Refino atual:</strong> +${item.refino}/10</div><div style="margin-top:6px"><strong>Atributos:</strong></div>${atbsHtml||'<div class="atributo">Nenhum atributo</div>'}<div class="refino-area"><div>Progresso de refino:</div><div class="refino-barra"><div style="width:${item.refino*10}%"></div></div><button class="btn" style="width:100%;margin-top:6px" onclick="refinarItem(${i})" ${item.refino>=10?'disabled':''}>🔧 Refinar (${custoRef} ouro)</button></div>`;}
+function venderTodos(){let t=0;jogador.inv.forEach(i=>t+=i.v);jogador.ouro+=t;jogador.inv=[];alert(`Vendeu tudo por ${t} ouro!`);salvar();atualizarTela();renderizarInventario();}
+function esvaziarInv(){if(confirm('Apagar todos sem ganhar ouro?')){jogador.inv=[];salvar();renderizarInventario();}}
+function deveVender(item){return jogador.venda[item.rar];}
+function carregarVendaConfig(){['comum','incomum','raro','epico','lendario','mitico','divino','ultra'].forEach(r=>{document.getElementById('v-'+r).checked=jogador.venda[r];});}
+function salvarVendaConfig(){['comum','incomum','raro','epico','lendario','mitico','divino','ultra'].forEach(r=>{jogador.venda[r]=document.getElementById('v-'+r).checked;});salvar();alert('Configuração salva! ✅');}
+function renderizarEquipamentos(){let slots=['cabeca','peito','maos','pernas','anel','amuleto','municao','bolsa'];let icones=['🧢','👕','🗡️','👢','💍','📿','🏹','🎒'];let nomes=['Cabeça','Peito','Arma','Pernas','Anel','Amuleto','Munição','Bolsa'];let html='';slots.forEach((s,i)=>{let eq=jogador.equip[s];html+=`<div class="eq-slot ${eq?'tem':''}" title="${eq?eq.n:nomes[i]}">${eq?eq.i:icones[i]}<div class="eq-nome">${eq?eq.n.substring(0,6)+'…':nomes[i]}</div></div>`;});document.getElementById('equipamentos').innerHTML=html;}
+function atualizarAura(){let aura=AURAS.filter(a=>jogador.refinoTotal>=a.min).pop()||AURAS[0];document.getElementById('nome-aura').textContent=aura.nome+(aura.bonus?` (${aura.bonus})`:'');document.getElementById('aura-personagem').style.background=aura.cor;}
+function atualizarTela(){document.getElementById('stamina-txt').textContent=formatarStamina(jogador.stamina);document.getElementById('stamina-bar').style.width=jogador.stamina/480*100+'%';document.getElementById('ouro-topo').textContent=jogador.ouro;document.getElementById('lvl-topo').textContent=jogador.lvl;let atr=calcularAtributos(jogador.lvl);document.getElementById('vida-txt').textContent=`${Math.floor(jogador.vidaPct/100*atr.vidaMax)}/${atr.vidaMax}`;document.getElementById('vida-bar').style.width=jogador.vidaPct+'%';document.getElementById('mana-txt').textContent=`${Math.floor(jogador.manaPct/100*atr.manaMax)}/${atr.manaMax}`;document.getElementById('mana-bar').style.width=jogador.manaPct+'%';document.getElementById('xp-txt').textContent=`${jogador.exp}/${jogador.lvl*100}`;document.getElementById('xp-bar').style.width=jogador.exp/(jogador.lvl*100)*100+'%';document.getElementById('refino-total').textContent=jogador.refinoTotal;atualizarAura();}
+</script>
+</body>
+</html>
